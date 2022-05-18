@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VnCuu2c9Cr6rQaOZrmXGJHz5/Q+aFDRnYxDZQDamTVE=",
+  "Source": "WhatsappWebServer",
+  "BasePath": "_content/WhatsappWebServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
