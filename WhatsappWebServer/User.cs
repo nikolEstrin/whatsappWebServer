@@ -1,8 +1,13 @@
-﻿namespace WhatsappWebServer
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WhatsappWebServer
 {
     public class User
     {
-        public string userNameId { get; set; }
+        public string Id { get; set; }
+        
+        [Required]
+        [DataType(DataType.Password)]
         public string password { get; set; }
 
         public string displayName { get; set; }

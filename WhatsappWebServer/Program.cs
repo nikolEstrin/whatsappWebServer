@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WhatsappWebServer.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<WhatsappWebServerContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WhatsappWebServerContext") ?? throw new InvalidOperationException("Connection string 'WhatsappWebServerContext' not found.")));
 
 // Add services to the container.
 
