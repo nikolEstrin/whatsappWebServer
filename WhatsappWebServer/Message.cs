@@ -2,12 +2,12 @@
 {
     public class Message
     {
-        public int id { get; set; }
+        public int? id { get; set; }
 
-        public string sender { get; set; }
+        public string content { get; set; }
 
-        public string message { get; set; }
+        public string? created { get; set; }
 
-        public string date { get; set; }
+        public bool? sent { get; set; }
     }
 }

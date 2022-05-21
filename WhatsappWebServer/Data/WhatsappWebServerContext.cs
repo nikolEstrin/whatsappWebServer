@@ -16,8 +16,8 @@ namespace WhatsappWebServer.Data
 
         public DbSet<WhatsappWebServer.Message>? Message { get; set; }
 
-        public DbSet<WhatsappWebServer.Chat>? Chat { get; set; }
-
         public DbSet<WhatsappWebServer.User>? User { get; set; }
+
+        public DbSet<WhatsappWebServer.Contact>? Contact { get; set; }
     }
 }

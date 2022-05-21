@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WhatsappWebServer.Message>
+﻿@model IEnumerable<WhatsappWebServer.Contact>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,13 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.sender)
+                @Html.DisplayNameFor(model => model.name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.message)
+                @Html.DisplayNameFor(model => model.server)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.date)
+                @Html.DisplayNameFor(model => model.last)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastdate)
             </th>
             <th></th>
         </tr>
@@ -28,13 +31,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.sender)
+                @Html.DisplayFor(modelItem => item.name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.message)
+                @Html.DisplayFor(modelItem => item.server)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.date)
+                @Html.DisplayFor(modelItem => item.last)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastdate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |

@@ -15,66 +15,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Programming\WhatsappWebServer\WhatsappWebServer
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Chats/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdHNcQ3JlYXRlLmNzaHRtbA==
+[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Contacts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Chats/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdHNcRGVsZXRlLmNzaHRtbA==
+[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Contacts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Chats/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdHNcRGV0YWlscy5jc2h0bWw=
+[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Contacts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Chats/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdHNcRWRpdC5jc2h0bWw=
+[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Contacts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Chats/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdHNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Messages/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Messages/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Messages/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Messages/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Messages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcSW5kZXguY3NodG1s
+[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Contacts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Users/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Users/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Users/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Users/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programming/WhatsappWebServer/WhatsappWebServer/Views/Users/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

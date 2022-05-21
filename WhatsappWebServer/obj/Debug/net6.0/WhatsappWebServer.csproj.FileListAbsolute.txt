@@ -263,3 +263,4 @@ D:\Programming\WhatsappWebServer\WhatsappWebServer\bin\Debug\net6.0\runtimes\win
 D:\Programming\WhatsappWebServer\WhatsappWebServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\Programming\WhatsappWebServer\WhatsappWebServer\obj\Debug\net6.0\WhatsappWebServer.RazorAssemblyInfo.cache
 D:\Programming\WhatsappWebServer\WhatsappWebServer\obj\Debug\net6.0\WhatsappWebServer.RazorAssemblyInfo.cs
+D:\Programming\WhatsappWebServer\WhatsappWebServer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
