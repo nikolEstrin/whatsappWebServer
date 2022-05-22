@@ -11,7 +11,7 @@ using WhatsappWebServer.Data;
 
 namespace WhatsappWebServer.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("api/contacts")]
     public class ContactsController : ControllerBase

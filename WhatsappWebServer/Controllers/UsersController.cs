@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
-
 namespace WhatsappWebServer.Controllers
 {
     [Route("api/[controller]")]
@@ -19,7 +16,7 @@ namespace WhatsappWebServer.Controllers
             _configuration = config;
         }
 
-        [HttpPost]
+        [HttpPost("login")]
         public IActionResult Post(string username, string password)
         {
             if(true)
@@ -32,7 +29,7 @@ namespace WhatsappWebServer.Controllers
                     new Claim("UserId", username)
                 };
 
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTParans:SecretKey"]));
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTParams:SecretKey"]));
                 var mac = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
                 var token = new JwtSecurityToken(
                     _configuration["JWTParams:Issuer"],
@@ -42,6 +39,7 @@ namespace WhatsappWebServer.Controllers
                     signingCredentials: mac);
                 return Ok(new JwtSecurityTokenHandler().WriteToken(token));
             }
+            return BadRequest();
         }
     }
 }
