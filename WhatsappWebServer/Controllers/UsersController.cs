@@ -32,7 +32,7 @@ namespace WhatsappWebServer.Controllers
                     new Claim("UserId", username)
                 };
 
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTParans:SecretKey"]));
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTParams:SecretKey"]));
                 var mac = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
                 var token = new JwtSecurityToken(
                     _configuration["JWTParams:Issuer"],

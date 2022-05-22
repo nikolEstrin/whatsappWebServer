@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using WhatsappWebServer;
 using WhatsappWebServer.Data;
 
+
 namespace WhatsappWebServer.Controllers
 {
     //[Authorize]
@@ -16,19 +17,19 @@ namespace WhatsappWebServer.Controllers
     [Route("api/contacts")]
     public class ContactsController : ControllerBase
     {
-        private static List<Message> _nikolAliceMessages = new List<Message> { new Message() { id = 181, content = "How are you?", created = "19:46", sent = false },
-        new Message() { id = 183, content = "ok", created = "19:47", sent = true },
-        new Message() { id = 184, content = "I know what you did last summer", created = "20:00", sent = true }};
+        /*private static List<Message> _nikolAliceMessages = new List<Message> { new Message() { id = 181, content = "How are you?", created = "2022-05-20T19:46:00", sent = false },
+        new Message() { id = 183, content = "ok", created = "2022-05-20T19:47:00", sent = true },
+        new Message() { id = 184, content = "I know what you did last summer", created = "2022-05-20T20:00:00", sent = true }};
 
-        private static List<Message> _nikolBobMessages = new List<Message> { new Message() { id = 1, content = "dont kill me", created = "19:46", sent = false },
-        new Message() { id = 2, content = "any last words?", created = "20:00", sent = true }};
+        private static List<Message> _nikolBobMessages = new List<Message> { new Message() { id = 1, content = "dont kill me", created = "2022-05-20T19:46:00", sent = false },
+        new Message() { id = 2, content = "any last words?", created = "2022-05-20T20:00:00", sent = true }};
 
-        private static List<Message> _aliceNikolMessages = new List<Message> { new Message() { id = 11, content = "How are you?", created = "19:46", sent = true },
-        new Message() { id = 12, content = "ok", created = "19:47", sent = false },
-        new Message() { id = 13, content = "I know what you did last summer", created = "20:00", sent = false }};
+        private static List<Message> _aliceNikolMessages = new List<Message> { new Message() { id = 11, content = "How are you?", created = "2022-05-20T19:46:00", sent = true },
+        new Message() { id = 12, content = "ok", created = "2022-05-20T19:47:00", sent = false },
+        new Message() { id = 13, content = "I know what you did last summer", created = "2022-05-20T20:00:00", sent = false }};
 
-        private static List<Message> _bobNikolMessages = new List<Message> { new Message() { id = 1, content = "dont kill me", created = "19:46", sent = true },
-        new Message() { id = 2, content = "any last words?", created = "20:01", sent = false }};
+        private static List<Message> _bobNikolMessages = new List<Message> { new Message() { id = 1, content = "dont kill me", created = "2022-05-20T19:46:00", sent = true },
+        new Message() { id = 2, content = "any last words?", created = "2022-05-20T20:01:00", sent = false }};
 
         private static List<Chat> _nikolChats = new List<Chat>() { new Chat() { id="Alice", messages=_nikolAliceMessages},
         new Chat() { id="Bob", messages=_nikolBobMessages}};
@@ -39,23 +40,25 @@ namespace WhatsappWebServer.Controllers
 
         private static List<Chat> _charlieChats = new List<Chat>();
 
-        private static List<Contact> _nikolContacts = new List<Contact> { new Contact() { id = "Alice", name = "Alicia", server = "localhost:7132", last = "I know what you did last summer", lastdate="20:00" },
-        new Contact() { id = "Bob", name = "Bobby", server = "localhost:7266", last = "any last words?", lastdate="20:00" }};
+        private static List<Contact> _nikolContacts = new List<Contact> { new Contact() { id = "Alice", name = "Alicia", server = "localhost:7132", last = "I know what you did last summer", lastdate="2022-05-20T20:00:00" },
+        new Contact() { id = "Bob", name = "Bobby", server = "localhost:7266", last = "any last words?", lastdate="2022-05-20T20:00:00" }};
 
-        private static List<Contact> _aliceContacts = new List<Contact> { new Contact() { id = "Nikol", name = "Nik", server = "localhost:7132", last = "I know what you did last summer", lastdate="20:00"}};
+        private static List<Contact> _aliceContacts = new List<Contact> { new Contact() { id = "Nikol", name = "Nik", server = "localhost:7132", last = "I know what you did last summer", lastdate= "2022-05-20T20:00:00" } };
 
-        private static List<Contact> _bobContacts = new List<Contact> { new Contact() { id = "Nikol", name = "Nik", server = "localhost:7132", last = "any last words?", lastdate="20:00" },};
+        private static List<Contact> _bobContacts = new List<Contact> { new Contact() { id = "Nikol", name = "Nik", server = "localhost:7132", last = "any last words?", lastdate= "2022-05-20T20:00:00" },};
 
         private static List<Contact> _charlieContacts = new List<Contact>();
 
         private static List<User> _users = new List<User> { new User() { Id = "Nikol", displayName = "Nik", password = "Nn1", contacts = _nikolContacts, chats = _nikolChats },
         new User() { Id = "Alice", displayName = "Alicia", password = "Aa1", contacts = _aliceContacts, chats = _aliceChats },
         new User() { Id = "Bob", displayName = "Bobby", password = "Bb1", contacts = _bobContacts, chats = _bobChats },
-        new User() { Id = "Charlie", displayName = "Charlie", password = "Cc1", contacts = _charlieContacts, chats = _charlieChats }};
-
-        User _user = _users.First();
+        new User() { Id = "Charlie", displayName = "Charlie", password = "Cc1", contacts = _charlieContacts, chats = _charlieChats }};*/
 
         
+        
+        User _user = HardCoded.users.First();
+
+
         [HttpGet]
         public IEnumerable<Contact> Index()
         {
@@ -75,8 +78,6 @@ namespace WhatsappWebServer.Controllers
         {
             if(ModelState.IsValid && contact.id!=null && UserExists(contact.id))
             {
-                User user = _users.Where(x => x.Id == contact.id).FirstOrDefault();
-                contact.name = user.displayName;
                 _user.contacts.Insert(0,contact);
                 _user.chats.Add(new Chat() { id = contact.id, messages = new List<Message>() });
                 return Created(string.Format("api/contacts/{0}", contact.id), (contact.id, contact.name, contact.server));
@@ -173,7 +174,7 @@ namespace WhatsappWebServer.Controllers
             if (ModelState.IsValid && ContactExists(id) && message.content != null)
             {
                 List<Message> userMessages = _user.chats.Where(x => x.id == id).FirstOrDefault().messages;
-                User contactUser = _users.Where(x => x.Id == id).FirstOrDefault();
+                User contactUser = HardCoded.users.Where(x => x.Id == id).FirstOrDefault();
                 Message message1 = new Message();
                 //make to the new contact new chat and new contact(the user)
                 if (userMessages.Count == 0)
@@ -186,7 +187,7 @@ namespace WhatsappWebServer.Controllers
                 {
                     message.id = userMessages.Last().id + 1;
                 }
-                message.created = DateTime.Now.ToString("yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss");
+                message.created = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
                 message.sent = true;
                 userMessages.Add(message);
                 List<Message> contactMessages = contactUser.chats.Where(x => x.id == _user.Id).FirstOrDefault().messages;
@@ -231,7 +232,7 @@ namespace WhatsappWebServer.Controllers
 
         private bool UserExists(string id)
         {
-            return _users.Where(x => x.Id == id).FirstOrDefault() != null;
+            return HardCoded.users.Where(x => x.Id == id).FirstOrDefault() != null;
         }
     }
 }
