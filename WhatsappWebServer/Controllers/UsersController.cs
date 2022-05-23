@@ -73,12 +73,13 @@ namespace WhatsappWebServer.Controllers
             return BadRequest();
         }
 
-        [HttpGet]
-        public IActionResult GetDisplayName(string username)
+        [HttpGet("displayname")]
+        public IActionResult GetDisplayName()
         {
-            if (HardCoded.users.Where(x => x.Id == username).FirstOrDefault() != null)
+            var userName = User.Claims.FirstOrDefault(c => c.Type == "UserId").Value;
+            if (HardCoded.users.Where(x => x.Id == userName).FirstOrDefault() != null)
             {
-                return Content(HardCoded.users.Where(x => x.Id == username).FirstOrDefault().displayName);
+                return Content(HardCoded.users.Where(x => x.Id == userName).FirstOrDefault().displayName);
             }
             return BadRequest();
         }
