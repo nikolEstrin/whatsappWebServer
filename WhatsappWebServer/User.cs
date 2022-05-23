@@ -15,5 +15,7 @@ namespace WhatsappWebServer
         public List<Contact> contacts { get; set; }
 
         public List<Chat> chats { get; set; }
+
+        public string? token;
     }
 }
