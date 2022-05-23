@@ -2,11 +2,25 @@
 
 namespace WhatsappWebServer.Controllers
 {
+    [ApiController]
+    [Route("api/invitations")]
     public class InvitationsController : Controller
     {
-        public IActionResult Index()
+        [HttpPost]
+        public IActionResult Index(string from, string to, string server)
         {
-            return View();
+            if(UserExists(to))
+            {
+                HardCoded.users.Where(x => x.Id == to).FirstOrDefault().contacts.Add(new Contact() { id = from, name = from, server = server });
+                return NoContent();
+            }
+            return BadRequest();
+        }
+
+
+        private bool UserExists( string id)
+        {
+            return HardCoded.users.Where(x => x.Id == id).FirstOrDefault() != null;
         }
     }
 }
