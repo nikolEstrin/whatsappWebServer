@@ -4,24 +4,20 @@ namespace WhatsappWebServer.Controllers
 {
     [ApiController]
     [Route("api/invitations")]
-    public class InvitationsController : Controller
+    public class InvitationsController : ControllerBase
     {
         [HttpPost]
         public IActionResult Index([Bind("from,to,server")] Connection connection)
         {
-            if(UserExists(connection.to))
+            User contactUser = HardCoded.users.Where(x => x.Id == connection.to).FirstOrDefault();
+            if (contactUser != null)
             {
-                HardCoded.users.Where(x => x.Id == connection.to).FirstOrDefault().contacts.Insert(
-                    0,new Contact() { id = connection.from, name = connection.from, server = connection.server});
+                contactUser.contacts.Insert(0,new Contact() { id = connection.from, name = connection.from, server = connection.server});
+                contactUser.chats.Add(new Chat() { id = connection.from, messages = new List<Message>() });
                 return NoContent();
             }
             return BadRequest();
-        }
-
-
-        private bool UserExists( string id)
-        {
-            return HardCoded.users.Where(x => x.Id == id).FirstOrDefault() != null;
+           
         }
     }
 }
