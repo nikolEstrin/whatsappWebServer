@@ -65,7 +65,7 @@ namespace WhatsappWebServer.Controllers
                     expires: DateTime.UtcNow.AddMinutes(20),
                     signingCredentials: mac);
 
-                User newUser = new User() { Id = username, password = password, displayName = displayname, chats = null, contacts = null };
+                User newUser = new User() { Id = username, password = password, displayName = displayname, chats = new List<Chat>(), contacts = new List<Contact>() };
                 newUser.token = new JwtSecurityTokenHandler().WriteToken(token);
                 HardCoded.users.Add(newUser);
                 return Ok(new JwtSecurityTokenHandler().WriteToken(token));
@@ -83,5 +83,6 @@ namespace WhatsappWebServer.Controllers
             }
             return BadRequest();
         }
+
     }
 }

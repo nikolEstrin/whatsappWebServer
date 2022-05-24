@@ -7,11 +7,12 @@ namespace WhatsappWebServer.Controllers
     public class InvitationsController : Controller
     {
         [HttpPost]
-        public IActionResult Index(string from, string to, string server)
+        public IActionResult Index([Bind("from,to,server")] Connection connection)
         {
-            if(UserExists(to))
+            if(UserExists(connection.to))
             {
-                HardCoded.users.Where(x => x.Id == to).FirstOrDefault().contacts.Add(new Contact() { id = from, name = from, server = server });
+                HardCoded.users.Where(x => x.Id == connection.to).FirstOrDefault().contacts.Insert(
+                    0,new Contact() { id = connection.from, name = connection.from, server = connection.server});
                 return NoContent();
             }
             return BadRequest();
