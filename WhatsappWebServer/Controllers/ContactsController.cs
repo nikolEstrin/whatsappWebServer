@@ -161,13 +161,11 @@ namespace WhatsappWebServer.Controllers
             if (ModelState.IsValid && UserExists(userName) && ContactExists(user,id) && message.content != null)
             {
                 List<Message> userMessages = user.chats.Where(x => x.id == id).FirstOrDefault().messages;
-                Message message1 = new Message();
+                //Message message1 = new Message();
                 //make to the new contact new chat and new contact(the user)
                 if (userMessages.Count == 0)
                 {
                     message.id = 1;
-                    //contactUser.chats.Add(new Chat() { id = user.Id, messages = new List<Message>() });
-                    //contactUser.contacts.Insert(0,new Contact() { id = user.Id, name = user.displayName + "?", server = "localhost:7132" });
                 }
                 else
                 {
@@ -176,18 +174,18 @@ namespace WhatsappWebServer.Controllers
                 message.created = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
                 message.sent = true;
                 userMessages.Add(message);
-                List<Message> contactMessages = contactUser.chats.Where(x => x.id == user.Id).FirstOrDefault().messages;
-                message1.id = message.id;
-                message1.created = message.created;
-                message1.content = message.content;
-                message1.sent = false;
-                contactMessages.Add(message1);
+                //List<Message> contactMessages = contactUser.chats.Where(x => x.id == user.Id).FirstOrDefault().messages;
+                //message1.id = message.id;
+                //message1.created = message.created;
+                //message1.content = message.content;
+                //message1.sent = false;
+                //contactMessages.Add(message1);
                 //updating last message of contact
                 user.contacts.Where(x => x.id == id).FirstOrDefault().last = message.content;
                 user.contacts.Where(x => x.id == id).FirstOrDefault().lastdate = message.created;
 
-                contactUser.contacts.Where(x => x.id == user.Id).FirstOrDefault().last = message.content;
-                contactUser.contacts.Where(x => x.id == user.Id).FirstOrDefault().lastdate = message.created;
+                //contactUser.contacts.Where(x => x.id == user.Id).FirstOrDefault().last = message.content;
+                //contactUser.contacts.Where(x => x.id == user.Id).FirstOrDefault().lastdate = message.created;
 
                 //TODO: check if contact is here, else- do trnsfer
 
