@@ -9843,24 +9843,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nikol\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\maorh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programming\\WhatsappWebServer\\WhatsappWebServer\\WhatsappWebServer.csproj",
+      "projectUniqueName": "C:\\Users\\maorh\\OneDrive\\שולחן העבודה\\programing\\Advanced Programing 2\\server\\WhatsappWebServer\\WhatsappWebServer.csproj",
       "projectName": "WhatsappWebServer",
-      "projectPath": "D:\\Programming\\WhatsappWebServer\\WhatsappWebServer\\WhatsappWebServer.csproj",
-      "packagesPath": "C:\\Users\\nikol\\.nuget\\packages\\",
-      "outputPath": "D:\\Programming\\WhatsappWebServer\\WhatsappWebServer\\obj\\",
+      "projectPath": "C:\\Users\\maorh\\OneDrive\\שולחן העבודה\\programing\\Advanced Programing 2\\server\\WhatsappWebServer\\WhatsappWebServer.csproj",
+      "packagesPath": "C:\\Users\\maorh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maorh\\OneDrive\\שולחן העבודה\\programing\\Advanced Programing 2\\server\\WhatsappWebServer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\nikol\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\maorh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

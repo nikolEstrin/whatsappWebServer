@@ -26,7 +26,7 @@
         public static List<Chat> charlieChats = new List<Chat>();
 
         public static List<Contact> nikolContacts = new List<Contact> { new Contact() { id = "Alice", name = "Alicia", server = "localhost:7132", last = "I know what you did last summer", lastdate="2022-05-20T20:00:00" },
-       new Contact() { id = "Bob", name = "Bobby", server = "localhost:7266", last = "any last words?", lastdate="2022-05-20T20:00:00" }};
+       new Contact() { id = "Bob", name = "Bobby", server = "localhost:7132", last = "any last words?", lastdate="2022-05-20T20:00:00" }};
 
         public static List<Contact> aliceContacts = new List<Contact> { new Contact() { id = "Nikol", name = "Nik", server = "localhost:7132", last = "I know what you did last summer", lastdate = "2022-05-20T20:00:00" } };
 
