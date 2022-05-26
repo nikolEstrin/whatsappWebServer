@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WhatsappWebServer.Data;
 using WhatsappWebServer.Hubs;
+using WhatsappWebServer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WhatsappWebServerContext>(options =>
@@ -14,6 +15,10 @@ builder.Services.AddSignalR();
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IContactsService, ContactsService>();
+builder.Services.AddScoped<IUsersService, UsersService>();
+builder.Services.AddScoped<ITransferService, TransferService>();
+builder.Services.AddScoped<IInvitationService, InvitationService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

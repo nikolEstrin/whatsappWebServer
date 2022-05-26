@@ -3,6 +3,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using WhatsappWebServer.Services;
+
 namespace WhatsappWebServer.Controllers
 {
     [Route("api/[controller]")]
@@ -10,78 +12,32 @@ namespace WhatsappWebServer.Controllers
     public class UsersController : ControllerBase
     {
         public IConfiguration _configuration;
+        private readonly IUsersService _service;
 
-        public UsersController(IConfiguration config)
+        public UsersController(IUsersService service, IConfiguration config)
         {
+            _service = service;
             _configuration = config;
         }
+
 
         [HttpPost("login")]
         public IActionResult Post(string username, string password)
         {
-            if (HardCoded.users.Where(x => x.Id == username).FirstOrDefault() != null && HardCoded.users.Where(x => x.Id == username).FirstOrDefault().password == password)
-            {
-                var claims = new[]
-                {
-                    new Claim(JwtRegisteredClaimNames.Sub, _configuration["JWTParams:Subject"]),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                    new Claim("UserId", username)
-                };
-
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTParams:SecretKey"]));
-                var mac = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-                var token = new JwtSecurityToken(
-                    _configuration["JWTParams:Issuer"],
-                    _configuration["JWTParams:Audience"],
-                    claims,
-                    expires: DateTime.UtcNow.AddMinutes(20),
-                    signingCredentials: mac);
-                HardCoded.users.Where(x => x.Id == username).FirstOrDefault().token = new JwtSecurityTokenHandler().WriteToken(token);
-                return Ok(new JwtSecurityTokenHandler().WriteToken(token));
-            }
-            return BadRequest();
+            return _service.Post(username, password, _configuration);
         }
 
         [HttpPost("signup")]
         public IActionResult Post2(string username, string password, string displayname)
         {
-            if (HardCoded.users.Where(x => x.Id == username).FirstOrDefault() == null)
-            {
-                var claims = new[]
-                {
-                    new Claim(JwtRegisteredClaimNames.Sub, _configuration["JWTParams:Subject"]),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-                    new Claim("UserId", username)
-                };
-
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTParams:SecretKey"]));
-                var mac = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-                var token = new JwtSecurityToken(
-                    _configuration["JWTParams:Issuer"],
-                    _configuration["JWTParams:Audience"],
-                    claims,
-                    expires: DateTime.UtcNow.AddMinutes(20),
-                    signingCredentials: mac);
-
-                User newUser = new User() { Id = username, password = password, displayName = displayname, chats = new List<Chat>(), contacts = new List<Contact>() };
-                newUser.token = new JwtSecurityTokenHandler().WriteToken(token);
-                HardCoded.users.Add(newUser);
-                return Ok(new JwtSecurityTokenHandler().WriteToken(token));
-            }
-            return BadRequest();
+            return _service.Post2(username, password, displayname, _configuration);
         }
 
         [HttpGet("displayname")]
         public IActionResult GetDisplayName()
         {
             var userName = User.Claims.FirstOrDefault(c => c.Type == "UserId").Value;
-            if (HardCoded.users.Where(x => x.Id == userName).FirstOrDefault() != null)
-            {
-                return Content(HardCoded.users.Where(x => x.Id == userName).FirstOrDefault().displayName);
-            }
-            return BadRequest();
+            return _service.GetDisplayName(userName);
         }
 
     }

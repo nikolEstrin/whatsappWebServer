@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maorh\\OneDrive\\שולחן העבודה\\programing\\Advanced Programing 2\\server\\WhatsappWebServer\\WhatsappWebServer.csproj": {}
+    "D:\\Programming\\WhatsappWebServer\\WhatsappWebServer\\WhatsappWebServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maorh\\OneDrive\\שולחן העבודה\\programing\\Advanced Programing 2\\server\\WhatsappWebServer\\WhatsappWebServer.csproj": {
+    "D:\\Programming\\WhatsappWebServer\\WhatsappWebServer\\WhatsappWebServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maorh\\OneDrive\\שולחן העבודה\\programing\\Advanced Programing 2\\server\\WhatsappWebServer\\WhatsappWebServer.csproj",
+        "projectUniqueName": "D:\\Programming\\WhatsappWebServer\\WhatsappWebServer\\WhatsappWebServer.csproj",
         "projectName": "WhatsappWebServer",
-        "projectPath": "C:\\Users\\maorh\\OneDrive\\שולחן העבודה\\programing\\Advanced Programing 2\\server\\WhatsappWebServer\\WhatsappWebServer.csproj",
-        "packagesPath": "C:\\Users\\maorh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maorh\\OneDrive\\שולחן העבודה\\programing\\Advanced Programing 2\\server\\WhatsappWebServer\\obj\\",
+        "projectPath": "D:\\Programming\\WhatsappWebServer\\WhatsappWebServer\\WhatsappWebServer.csproj",
+        "packagesPath": "C:\\Users\\nikol\\.nuget\\packages\\",
+        "outputPath": "D:\\Programming\\WhatsappWebServer\\WhatsappWebServer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\maorh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nikol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WhatsappWebServer.Services;
 
 namespace WhatsappWebServer.Controllers
 {
@@ -6,18 +7,17 @@ namespace WhatsappWebServer.Controllers
     [Route("api/invitations")]
     public class InvitationsController : ControllerBase
     {
+        private readonly IInvitationService _service;
+
+        public InvitationsController(IInvitationService service)
+        {
+            _service = service;
+        }
+
         [HttpPost]
         public IActionResult Index([Bind("from,to,server")] Connection connection)
         {
-            User contactUser = HardCoded.users.Where(x => x.Id == connection.to).FirstOrDefault();
-            if (contactUser != null)
-            {
-                contactUser.contacts.Insert(0,new Contact() { id = connection.from, name = connection.from, server = connection.server});
-                contactUser.chats.Add(new Chat() { id = connection.from, messages = new List<Message>() });
-                return NoContent();
-            }
-            return BadRequest();
-           
+            return _service.Index(connection); 
         }
     }
 }
