@@ -53,22 +53,47 @@
         }
       },
       "MessagePackAnalyzer/2.1.152": {},
-      "Microsoft.AspNet.Cors/5.2.8": {},
+      "Microsoft.AspNet.Cors/5.2.8": {
+        "runtime": {
+          "lib/net45/System.Web.Cors.dll": {
+            "assemblyVersion": "5.2.8.0",
+            "fileVersion": "5.2.34876.0"
+          }
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.8": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1",
           "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "5.2.8.0",
+            "fileVersion": "5.2.34876.0"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.Core/5.2.8": {
         "dependencies": {
           "Microsoft.AspNet.WebApi.Client": "5.2.8"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {
+            "assemblyVersion": "5.2.8.0",
+            "fileVersion": "5.2.34876.0"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.Cors/5.2.8": {
         "dependencies": {
           "Microsoft.AspNet.Cors": "5.2.8",
           "Microsoft.AspNet.WebApi.Core": "5.2.8"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.Cors.dll": {
+            "assemblyVersion": "5.2.8.0",
+            "fileVersion": "5.2.34876.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.5": {
@@ -1324,6 +1349,12 @@
         "dependencies": {
           "NETStandard.Library": "1.6.1",
           "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.1.20722"
+          }
         }
       },
       "NuGet.Common/5.11.0": {
